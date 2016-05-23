@@ -39,13 +39,13 @@ class acf_social_widget extends WP_Widget {
             extract($args, EXTR_SKIP);
             $title 		= apply_filters('widget_title', $instance['title']);
             // Begin front-end widget output
-            $widget = '$before_widget';   
+            $widget = $before_widget;   
             $widget .= ( $title ) ? $before_title . $title . $after_title : '';
 
             $widget .= '<address>';
-            if( have_rows('social_accounts', option) ):
+            if( have_rows('social_accounts', 'option') ):
                 $widget .= '<ul class="list-social-accounts">';
-                while ( have_rows('social_accounts', option) ) : the_row();
+                while ( have_rows('social_accounts', 'option') ) : the_row();
                     $widget .= '<li>
                                     <a class="social-media-link muted" style="color: ' . get_sub_field('color') . '" href="' . get_sub_field('link') . '">
                                         <span class="fa-stack fa-lg">
@@ -60,8 +60,7 @@ class acf_social_widget extends WP_Widget {
 
             endif;
             $widget .= '</address>';
-            $widget .=
-            $widget .= '$after_widget';
+            $widget .= $after_widget;
 
             echo $widget; // Output the widget
         }

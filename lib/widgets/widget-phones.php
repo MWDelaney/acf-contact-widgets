@@ -39,21 +39,20 @@ class acf_phones_widget extends WP_Widget {
             extract($args, EXTR_SKIP);
             $title 		= apply_filters('widget_title', $instance['title']);
             // Begin front-end widget output
-            $widget = '$before_widget';   
+            $widget = $before_widget;   
             $widget .= ( $title ) ? $before_title . $title . $after_title : '';
 
             $widget .= '<address>';
-            if( have_rows('phone_numbers', option) ):
+            if( have_rows('phone_numbers', 'option') ):
                 $widget .= '<ul class="list-phone-numbers">';
-                while ( have_rows('phone_numbers', option) ) : the_row();
+                while ( have_rows('phone_numbers', 'option') ) : the_row();
                     $widget .= '<li><span class="phone-label">' . get_sub_field('label') . '</span>' . get_sub_field('number') . '</li>';
                 endwhile;
                 $widget .= '</ul>';
 
             endif;
             $widget .= '</address>';
-            $widget .=
-            $widget .= '$after_widget';
+            $widget .= $after_widget;
 
             echo $widget; // Output the widget
         }

@@ -39,17 +39,17 @@ class acf_address_widget extends WP_Widget {
             extract($args, EXTR_SKIP);
             $title 		= apply_filters('widget_title', $instance['title']);
             // Begin front-end widget output
-            $widget = '$before_widget';   
+            $widget = $before_widget;   
             $widget .= ( $title ) ? $before_title . $title . $after_title : '';
 
             $widget .= '<address>';
-            $widget .= (get_field('address', option)) ? the_field('address', option) . '<br>' : '';
-            $widget .= (get_field('address_line_2', option)) ? the_field('address_line_2', option) . '<br>' : '';
-            $widget .= (get_field('city', option)) ? the_field('city', option) . '<br>' : '';
-            $widget .= (get_field('state', option)) ? the_field('state', option) . '<br>' : '';
-            $widget .= (get_field('zip', option)) ? the_field('zip', option) . '<br>' : '';
+            $widget .= (get_field('address', 'option')) ? the_field('address', 'option') . '<br>' : '';
+            $widget .= (get_field('address_line_2', 'option')) ? the_field('address_line_2', 'option') . '<br>' : '';
+            $widget .= (get_field('city', 'option')) ? the_field('city', 'option') . '<br>' : '';
+            $widget .= (get_field('state', 'option')) ? the_field('state', 'option') . '<br>' : '';
+            $widget .= (get_field('zip', 'option')) ? the_field('zip', 'option') . '<br>' : '';
             $widget .= '</address>';
-            $widget .= '$after_widget';
+            $widget .= $after_widget;
 
             echo $widget; // Output the widget
         }
