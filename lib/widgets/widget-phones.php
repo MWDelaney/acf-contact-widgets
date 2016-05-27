@@ -46,7 +46,7 @@ class acf_phones_widget extends WP_Widget {
             if( have_rows('phone_numbers', 'option') ):
                 $widget .= '<ul class="list-phone-numbers">';
                 while ( have_rows('phone_numbers', 'option') ) : the_row();
-                    $widget .= '<li><span class="phone-label">' . get_sub_field('label') . '</span>' . get_sub_field('number') . '</li>';
+                    $widget .= '<li><span class="phone-label">' . get_sub_field('label') . '</span> ' . get_sub_field('number') . '</li>';
                 endwhile;
                 $widget .= '</ul>';
 
