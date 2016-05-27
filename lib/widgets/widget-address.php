@@ -45,9 +45,9 @@ class acf_address_widget extends WP_Widget {
             $widget .= '<address>';
             $widget .= (get_field('address', 'option')) ? get_field('address', 'option') . '<br>' : '';
             $widget .= (get_field('address_line_2', 'option')) ? get_field('address_line_2', 'option') . '<br>' : '';
-            $widget .= (get_field('city', 'option')) ? get_field('city', 'option') . '<br>' : '';
-            $widget .= (get_field('state', 'option')) ? get_field('state', 'option') . '<br>' : '';
-            $widget .= (get_field('zip', 'option')) ? get_field('zip', 'option') . '<br>' : '';
+            $widget .= (get_field('city', 'option')) ? get_field('city', 'option') . ', ' : '';
+            $widget .= (get_field('state', 'option')) ? get_field('state', 'option') . ' ' : '';
+            $widget .= (get_field('zip', 'option')) ? get_field('zip', 'option') : '';
             $widget .= '</address>';
             $widget .= $after_widget;
 
