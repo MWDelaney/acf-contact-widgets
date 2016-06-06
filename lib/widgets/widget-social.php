@@ -50,7 +50,7 @@ class acf_social_widget extends WP_Widget {
                                     <a class="social-media-link muted" style="color: ' . get_sub_field('color') . '" href="' . get_sub_field('link') . '">
                                         <span class="fa-stack fa-lg">
                                             <i class="fa fa-square fa-stack-2x fa-inverse"></i>
-                                            <i class="fa ' . get_sub_field('icon') . ' fa-stack-2x"></i>
+                                            <i class="fa ' . get_sub_field('icon') . ' fa-stack-1x"></i>
                                         </span>
                                         <span class="account-name">' . get_sub_field('account_name') . '</span>
                                     </a>
