@@ -48,6 +48,7 @@ class acf_address_widget extends WP_Widget {
             $widget .= (get_field('city', 'option')) ? get_field('city', 'option') . ', ' : '';
             $widget .= (get_field('state', 'option')) ? get_field('state', 'option') . ' ' : '';
             $widget .= (get_field('zip', 'option')) ? get_field('zip', 'option') : '';
+            $widget .= (get_field('country', 'option')) ? get_field('country', 'option') : '';
             $widget .= '</address>';
             $widget .= $after_widget;
 
