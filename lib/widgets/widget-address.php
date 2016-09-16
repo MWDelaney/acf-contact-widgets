@@ -43,12 +43,13 @@ class acf_address_widget extends WP_Widget {
             $widget .= ( $title ) ? $before_title . $title . $after_title : '';
 
             $widget .= '<address>';
-            $widget .= (get_field('address', 'option')) ? get_field('address', 'option') . '<br>' : '';
-            $widget .= (get_field('address_line_2', 'option')) ? get_field('address_line_2', 'option') . '<br>' : '';
-            $widget .= (get_field('city', 'option')) ? get_field('city', 'option') . ', ' : '';
-            $widget .= (get_field('state', 'option')) ? get_field('state', 'option') . ' ' : '';
-            $widget .= (get_field('zip', 'option')) ? get_field('zip', 'option') . ' ' : '';
-            $widget .= (get_field('country', 'option')) ? get_field('country', 'option') : '';
+            $widget .= (get_field('company_name', 'option')) ? '<span class="contact-company-name"> ' .get_field('company_name', 'option') . '</span><br>' : '';
+            $widget .= (get_field('address', 'option')) ? '<span class="contact-address"> ' .get_field('address', 'option') . '</span><br>' : '';
+            $widget .= (get_field('address_line_2', 'option')) ? '<span class="contact-address-2"> ' .get_field('address_line_2', 'option') . '</span><br>' : '';
+            $widget .= (get_field('city', 'option')) ? '<span class="contact-city"> ' .get_field('city', 'option') . '</span>, ' : '';
+            $widget .= (get_field('state', 'option')) ? '<span class="contact-state"> ' .get_field('state', 'option') . '</span> ' : '';
+            $widget .= (get_field('zip', 'option')) ? '<span class="contact-zip"> ' .get_field('zip', 'option') . '</span> ' : '';
+            $widget .= (get_field('country', 'option')) ? '<span class="contact-country"> ' .get_field('country', 'option') . '</span>' : '';
             $widget .= '</address>';
             $widget .= $after_widget;
 
